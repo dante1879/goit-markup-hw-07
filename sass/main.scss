@@ -1,8 +1,11 @@
+@import './utils/mixins';
 @import './base/reset';
 @import './base/common';
 @import './base/hidden';
 
 @import './utils/vars';
+@import './utils/placeholders';
+
 
 @import './components/container';
 @import './components/section';
@@ -16,4 +19,4 @@
 @import './layouts/clients';
 @import './layouts/footer';
 @import './layouts/portfolio';
-@import './layouts/modal-lead-form'
+@import './layouts/modal-lead-form';

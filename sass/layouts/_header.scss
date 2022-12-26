@@ -3,40 +3,33 @@
 }
 
 .main-menu,
-.main-nav,
-.main-contacts {
+.navigation__list,
+.contact-us,
+.navigation {
   display: flex;
   align-items: center;
 }
 
-a.main-logo {
+.main-logo {
   display: block;
   margin-right: 93px;
   padding-top: 24px;
   padding-bottom: 25px;
-}
 
-.main-nav > .item:not(:last-child),
-.main-contacts > .item:not(:last-child) {
-  margin-right: 40px;
-}
-
-.web-accent {
-  color: var(--primary-blue);
-}
-.studio-header {
-  color: var(--logo-black);
-}
-
-.main-logo {
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  &--blue {
+    color: var(--primary-blue);
+  }
+  &--black {
+    color: var(--logo-black);
+  }
 }
 
-.site-nav {
+.navigation__link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -48,34 +41,47 @@ a.main-logo {
   letter-spacing: 0.02em;
 
   transition: color 250ms var(--cubic_animation);
+
+  &:hover,
+  &:focus {
+    color: var(--primary-blue);
+  }
 }
 
-.main-nav .nav-selected {
+.navigation__link--current {
   color: var(--primary-blue);
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background: var(--primary-blue);
+    border-radius: 2px;
+  }
 }
 
-.main-nav .item {
+.navigation__item {
   position: relative;
   display: flex;
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
 }
 
-.nav-selected::after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  background: var(--primary-blue);
-  border-radius: 2px;
-}
-
-ul.main-contacts {
+.contact-us {
   margin-left: auto;
+  &__icon {
+    fill: currentColor;
+  }
+  &__item:not(:last-child) {
+    margin-right: 40px;
+  }
 }
 
-a.header-contacts {
+.contact-us__link {
   width: 100%;
   height: 100%;
 
@@ -85,15 +91,8 @@ a.header-contacts {
   gap: 10px;
 
   transition: color 250ms var(--cubic_animation);
-}
-
-.contact-svg {
-  fill: currentColor;
-}
-
-a.site-nav:hover,
-a.site-nav:focus,
-a.header-contacts:hover,
-a.header-contacts:focus {
-  color: var(--primary-blue);
+  &:hover,
+  &:focus {
+    color: var(--primary-blue);
+  }
 }
